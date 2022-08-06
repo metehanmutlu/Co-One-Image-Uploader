@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500;1,600&family=Poppins:wght@100&display=swap');
+
+:root {
+  --bg-color-dark: #182625;
+  --bg-color-light: #28403D;
+  --bg-color-primary: #28403D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--bg-color-dark);
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.imagesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.imageCard {
+  background-color: var(--bg-color-primary);
+  position: relative;
+  min-width: 300px;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.2s ease;
+}
+
+.imageCard:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+
+.imageCard img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.deleteBtn {
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+  background-color: var(--bg-color-primary);
+  border: none;
+  outline: none;
+}
+
+.deleteBtn:hover {
+  color: tomato;
+}
+
+.imgUpload {
+  font-size: 30px;
+  margin: 60px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uploadBtn {
+  font-size: 30px;
+  background: #bbb;
+  border: 3px solid #bbb;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.uploadBtn:hover {
+  background-color: var(--bg-color-light);
+  color: #fff;
+}
+
+.disabledUploadBtn {
+  font-size: 30px;
+  background: #fff;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.uploadBtn:active {
+  transform: scale(0.90);
+}
+
+.imgUpload label {
+  cursor: pointer;
+}
+
+.uploadIcon {
+  font-size: 80px;
+}
+
+#myFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* @media screen and (max-width: 992px) {} */
+
+@media screen and (max-width: 780px) {
+  .imageCard {
+    background-color: var(--bg-color-primary);
+    position: relative;
+    min-width: 180px;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.2s ease;
+  }
+
+  .imageCard img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
