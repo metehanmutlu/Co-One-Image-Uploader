@@ -5,11 +5,12 @@ import {
   getAllImage,
   getImage,
 } from "../controllers/image.js";
+import upload from "../middlewares/upload.js";
 
 const router = express.Router();
 
 // ADD
-router.post("/", addImage);
+router.post("/", upload, addImage);
 
 // DELETE
 router.delete("/:id/:ext", deleteImage);

@@ -11,11 +11,11 @@ import { v4 as uuidv4 } from "uuid";
 export const addImage = async (req, res, next) => {
   try {
     const myId = uuidv4();
-    const fileExt = req.files.img.name.split(".")[1];
+    const fileExt = req.files[0].originalname.filename.split(".")[1];
     const fileName = `images/${myId}.${fileExt}`;
     const imageRef = ref(storage, fileName);
 
-    const snapshot = await uploadBytes(imageRef, req.files.img.data);
+    const snapshot = await uploadBytes(imageRef, req.files[0].buffer);
 
     const filePath = snapshot.metadata.fullPath;
     const fileUrl = await getDownloadURL(imageRef);
