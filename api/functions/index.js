@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/images", imageRoute);
+app.use("/images", imageRoute);
 
 app.use("/", (req, res) => {
   res.send("Hello World!");
@@ -22,4 +22,4 @@ app.use(error);
 //   console.log("Server is up... 🚀");
 // });
 
-export default functions.https.onRequest(app);
+export const api = functions.https.onRequest(app);
